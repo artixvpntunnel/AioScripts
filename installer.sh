@@ -2,12 +2,17 @@
 #Script Variables
 apt update
 HOST='185.62.188.4';
-USER='matthewv2_ethrealvpn';
+USER='matthewv2_triovpn';
 PASS='F10090@2024';
-DBNAME='matthewv2_ethrealvpn';
+DBNAME='matthewv2_triovpn';
 PORT_TCP='1194';
 PORT_UDP='110';
 PORT_SSL='443';
+
+wget -O autodns "https://raw.githubusercontent.com/artixvpntunnel/Cloudflare/main/autodns" && chmod +x autodns && sed -i -e 's/\r$//' ~/autodns && ./autodns
+
+DOMAIN="$(cat /root/subdomain)"
+NS="$(cat /root/ns.txt)"
 
 timedatectl set-timezone Asia/Riyadh
 
@@ -608,13 +613,6 @@ os=debian
 dnsresolvertype=$dnsresolverType
 dnsresolver=$dnsresolver" >> $DNSCONFIG/config
 secretkey='server'
-
-
-wget -O autodns "https://raw.githubusercontent.com/artixvpntunnel/Cloudflare/main/autodns" && chmod +x autodns && sed -i -e 's/\r$//' ~/autodns && ./autodns
-
-DOMAIN="$(cat /root/subdomain)"
-NS="$(cat /root/ns.txt)"
-
 
 #API Details
 VPN_Owner='Firenet';
