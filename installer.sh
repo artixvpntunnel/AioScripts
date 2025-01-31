@@ -2,9 +2,9 @@
 #Script Variables
 apt update
 HOST='185.62.188.4';
-USER='matthewv2_triovpn';
-PASS='F10090@2024';
-DBNAME='matthewv2_triovpn';
+USER='matthewv2_newpanel';
+PASS='f10090@2024';
+DBNAME='matthewv2_newpanel';
 PORT_TCP='1194';
 PORT_UDP='110';
 PORT_SSL='443';
